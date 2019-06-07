@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Zeus Numerix</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Local CSS -->
+ <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='final.css') }}">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<!-- Font Awesome JS -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+  
+</head>
+<body>
+
+
+    <!-- jQuery CDN - Slim version -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	
+
+	
+	
+<!--navbar-->
+
+	<nav  class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+				<div class="navbar-header">
+				
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					  </button>
+					  <a class="navbar-brand" href="#">Logo</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="myNavbar">
+					  <ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						
+						<li><a href="#">Rescources</a></li>
+						<li><a href="#">Technologies</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					  </ul>
+					  
+					  <ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+						
+					  </ul>
+				</div>
+		  </div>
+	</nav>	
+	
+	
+<div class="wrapper">
+
+
+	<nav id="sidebar">
+		
+		<div class="sidebar-header">
+		
+			<h3>Internal Ballistics Simulation</h3>
+		
+		</div>
+	
+		<ul class="list-unstyled components">
+			<li>
+					<a href="#file" data-toggle="collapse" aria-expended="false" class="dropdown-toggle">File</a>
+					
+					<ul class="collapse list-unstyled" id="file">
+						
+						<li>
+							<a href="#">New</a>
+						</li>
+						<li>
+							<a href="#">Open</a>
+						</li>
+						<li>
+							<a href="#">Import JSON</a>
+						</li>
+						<li class="divider">
+						</li>
+						<li>
+							<a href="#">Exit</a>
+						</li>
+					</ul>
+			</li>
+
+			<li>
+					<a href="#view" data-toggle="collapse" aria-expended="false" class="dropdown-toggle">View</a>
+				
+					<ul class="collapse list-unstyled" id="view">
+						<li>
+							<a href="#">Default</a>
+						</li>
+						<li>
+							<a href="#">2D View</a>
+						</li>
+						<li>
+							<a href="#">3D View</a>
+						</li>
+				
+						
+					</ul>
+					
+			</li>
+
+			<li>
+					<a href="#input_parameter" data-toggle="collapse" aria-expended="false" class="dropdown-toggle">Input Parameter</a>
+					<ul class="collapse list-unstyled" id="input_parameter">
+						<li>
+							<a href="#" id="btn_barrel">Barrel</a>
+						</li>
+						<li>
+							<a href="#" id="btn_chamber">Chamber</a>
+						</li>
+						<li>
+							<a href="#" id="btn_projectile">Projectile</a>
+						</li>
+						<li>
+							<a href="#" id="btn_propellant">Propellant</a>
+						</li>
+						<li>
+							<a href="#" id="btn_dynamics">Dynamics</a>
+						</li>
+						<li>
+							<a href="#" id="btn_constants">Constants</a>
+						</li>
+					   
+					</ul>
+			</li>
+			
+			<li>
+				<a href="#help" data-toggle="collapse" aria-expended="false" class="dropdown-toggle">Help</a>
+				
+					<ul class="collapse list-unstyled" id="help">
+						<li>
+							<a href="#">Manual</a>
+						</li>
+						
+						<li>
+							<a href="#">About</a>
+						</li>
+					</ul>
+			</li>
+
+		</ul>
+		
+	</nav>	
+
+
+
+
+
+	<div id="graphs"class="d-flex flex-column">    
+	    <canvas id="firstCan" class="GraphCan" width = "90%" height = "29.5%">
+			<!--<div id ="firstCan" class="panel panel-success">
+			
+				<div class="panel-heading">Time Vs Pressure</div>
+				<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+			
+			</div>-->
+		</canvas>
+		<canvas id="secondCan" class = "GraphCan" width = "90%" height = "29.5%">
+			 <!-- <div class="panel panel-success">
+				
+				<div class="panel-heading">Time vs Velocity</div>
+				<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+				
+			  </div>-->
+		</canvas>
+		<canvas id="thirdCan" class = "GraphCan" width = "90%" height = "29.5%">				
+			<!--<div class="panel panel-success">
+				
+				<div class="panel-heading">Time vs Temperature</div>
+				<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+				
+			</div>-->
+		</canvas>	
+	</div>
+	
+	<!--		<div class = "d-flex flex-row" >
+				
+				<button type="button" class="btn btn-outline-dark">Barrel</button>
+				<button type="button" class="btn btn-outline-dark">Chamber</button>
+				<button type="button" class="btn btn-outline-dark">Projectile</button>
+			
+			</div>
+			<div class = "d-flex flex-row" >
+				
+				<button type="button" class="btn btn-outline-dark">Propellant</button>
+				<button type="button" class="btn btn-outline-dark">Dynamics</button>
+				<button type="button" class="btn btn-outline-dark">Constants</button>
+			
+			</div>
+	>-->
+	<div id = "nongraph" class="d-flex flex-column flex-fill">    
+		
+		<div id = "animation">
+				<p id="scale1">| ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' |</p>
+			
+				<hr></hr>
+				
+				<p id="scale2">| ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' | ' ' ' ' |</p>
+				
+				<div id="bullet"></div>
+		</div>
+		
+		<div id = "output">
+		
+		</div>
+		<div id="buttonContainer">
+			
+			<div id="row" >
+				<button id="barrel_short"type="button" class="btn1">Barrel</button>
+				<button id="chamber_short" type="button" class = "btn1">Chamber</button>
+				<button id="project_short"type="button" class = "btn1">Projectile</button>
+				<button id="prop_short"type="button" class = "btn1">Propellant</button>
+				<button id="dyna_short"type="button" class = "btn1">Dynamics</button>
+				<button id="const_short"type="button" class = "btn1">Constants</button>
+			</div>
+			
+			<div id="row" >
+				
+					<button id = "run" type="button" class="btn btn-success" >Run</button>
+					<button type="button" class="btn btn-primary">Summary</button>
+					<button type="button" class="btn btn-danger">Import</button>
+				
+			</div>
+		</div>
+		<!--class="d-flex justify-content-around"-->
+		
+		
+	</div>
+	
+	<div id = "firstG" class="GraphBig toggle">
+		
+			<div class="G1">
+					<button class="close" id = "shut1" >&times;</button>
+			
+			</div>
+		
+	</div>
+	
+	<div id = "secondG" class="GraphBig toggle">
+		
+			<div class="G1">
+					<button class="close" id = "shut2" >&times;</button>
+			
+			</div>
+		
+	</div>
+	
+	<div id = "thirdG" class="GraphBig toggle">
+		
+			<div class="G1">
+					<button class="close" id = "shut3" >&times;</button>
+			
+			</div>
+		
+	</div>
+	
+<!--input popups-->
+	<div class="custom_modal pop_up_toggle" id="barrel_modal">
+        
+		<div class="input_popup">
+            
+			<div class="custom_modal_header">
+                 
+				 <button class="close" >&times;</button>
+				 <h5><b>Barrel</b></h5>
+            
+			</div>
+			
+            <div class="custom_modal_content">
+                
+				<table class="table table-borderless">
+                    <tr>
+                        <td>Diameter</td>
+                        <td><input type="number" value="30" name="barrel_diameter" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td><input type="number" value="3007" name="barrel_length" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Number Rifling Twist</td>
+                        <td><input type="number" value="23.85" name="barrel_nrt" style="width: 100px"></td>
+                    </tr>
+                </table>
+				
+            </div>
+			
+            <div class="custom_modal_footer">
+                
+				<button type="button" class="input_close_button">Apply</button>
+            
+			</div>
+
+        </div>
+    </div>
+
+    <div class="custom_modal pop_up_toggle" id="chamber_modal">
+        <div class="input_popup">
+         <div class="custom_modal_header">
+				<button class="close" >&times;</button>
+                 <h5><b>Chamber</b></h5>
+            </div>
+			<div class="custom_modal_content">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Length</td>
+                        <td><input type="number" value="145" name="chamber_length" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Volume</td>
+                        <td><input type="number" value="0.135 " name="chamber_volume" style="width:100px;"></td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div class="custom_modal_footer">
+                <button type="button" class="input_close_button">Apply</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="custom_modal pop_up_toggle" id="projectile_modal">
+        <div class="input_popup">
+            <div class="custom_modal_header">
+                <button class="close" >&times;</button>
+				<h5><b>Projectile</b></h5>
+            </div>
+            <div class="custom_modal_content">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Mass</td>
+                        <td><input type="number" value="0.400" name="projectile_mass" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Rotational Inertia</td>
+                        <td><input type="number" value="0.000025" name="projectile_rot_In" style="width: 100px"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="custom_modal_footer">
+                <button type="button" class="input_close_button">Apply</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="custom_modal pop_up_toggle" id="propellant_modal">
+        <div class="input_popup">
+            <div class="custom_modal_header">
+                <button class="close" >&times;</button>
+				<h5><b>Propellant</b></h5>
+            </div>
+			
+            <div class="custom_modal_content">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Mass</td>
+                        <td><input type="number" value="0.128" name="prop_mass" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Density</td>
+                        <td><input type="number" value="1525" name="prop_density" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Force Constant</td>
+                        <td><input type="number" value="591" name="prop_fc" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Gamma</td>
+                        <td><input type="number" value="1.25" name="prop_gamma" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Molecular_Mass</td>
+                        <td><input type="number" value="23.3" name="prop_mol_mass" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Outer Diameter</td>
+                        <td><input type="number" value="3.2" name="prop_out_dia" style="width:100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Hole Diameter</td>
+                        <td><input type="number" value="0.2" name="prop_hole_dia" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Number Holes Grain</td>
+                        <td><input type="number" value="7" name="prop_nhg" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Web Size</td>
+                        <td><input type="number" value=".69" name="prop_web_size" style="width: 100px"></td>
+                    </tr>
+					
+                    <tr>
+                        <td>Burn Rate</td>
+                        <td><input type="number" value="0.162" name="prop_burn_rate" style="width: 100px"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="custom_modal_footer">
+                <button type="button" class="input_close_button">Apply</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="custom_modal pop_up_toggle" id="dynamics_modal">
+        
+		<div class="input_popup">
+				<div class="custom_modal_header">
+					<button class="close" >&times;</button>
+					<h5><b>Dynamics</b></h5>
+				</div>
+            
+				<div class="custom_modal_content">
+					<table class="table table-borderless">
+						
+						<tr>
+							<td>Pressure Exponent</td>
+							<td><input type="number" value="0.85" name="dyanmics_PE" style="width: 100px"></td>
+						</tr>
+						<tr>
+							<td>Mass Recoiling</td>
+							<td><input type="number" value="300" name="dyanmics_mass_rec" style="width: 100px"></td>
+						</tr>
+						<tr>
+							<td>Shot Start Pressure</td>
+							<td><input type="number" value="60" name="dyanmics_ssp" style="width: 100px"></td>
+						</tr>
+						
+					</table>
+				</div>
+            
+				<div class="custom_modal_footer">
+					<button type="button" class="input_close_button">Apply</button>
+				</div>
+		</div>
+	</div>	
+		
+		<div class="custom_modal pop_up_toggle" id="constants_modal">
+			
+			<div class="input_popup">
+				
+					<div class="custom_modal_header">
+						<button class="close" >&times;</button>
+						<h5><b>Constants</b></h5>
+					</div>
+
+					<div class="custom_modal_content">
+							
+							<table class="table table-borderless">
+								
+								<tr>
+									<td>Atmospheric Pressure</td>
+									<td><input type="number" value="101325.0" name="flat_panels_sa_max_value" style="width: 100px"></td>
+								</tr>
+								<tr>
+									<td>Speed Sound Ambient</td>
+									<td><input type="number" value="347.19" name="flat_panels_sa_min_value" style="width: 100px"></td>
+								</tr>
+								<tr>
+									<td>Temperature Barrel</td>
+									
+									<td><input type="number" value="1000.0" name="flat_panels_sa_min_value" style="width: 100px"></td>
+								</tr>
+								<tr>
+									<td>Specific Covolume</td>
+									
+									<td><input type="number" value="0.001" name="flat_panels_sa_min_value" style="width: 100px"></td>
+								</tr>
+							
+								<tr>
+									<td>Fraction Friction Loss</td>
+									
+									<td><input type="number" value="0.05" name="flat_panels_sa_min_value" style="width: 100px"></td>
+								</tr>
+								<tr>
+									<td>Time Step</td>
+									
+									<td><input type="number" value="1e-6" name="flat_panels_sa_min_value" style="width: 100p  x"></td>
+								</tr>
+								<tr>
+									<td>Universal Gas Constant</td>
+									
+									<td><input type="number" value="8.314" name="flat_panels_sa_min_value" style="width: 100px"></td>
+								</tr>
+							
+							</table>
+					</div>
+					
+					<div class="custom_modal_footer">
+						<button type="button" class="input_close_button">Apply</button>
+					</div>
+					
+			</div>
+		
+		</div>
+
+	
+	
+	
+	
+</div>
+		<script type="text/javascript" src="{{ url_for('static',filename='input_fetch.js') }}"></script>
+
+	<script type="text/javascript" src="{{ url_for('static',filename='webapp.js') }}"></script>
+			
+</body>
+</html>
